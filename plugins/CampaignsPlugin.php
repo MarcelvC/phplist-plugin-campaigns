@@ -30,7 +30,6 @@ class CampaignsPlugin extends phplistPlugin
     {
         global $plugins;
 
-
         require_once $plugins['CommonPlugin']->coderoot . 'Autoloader.php';
         $i18n = new CommonPlugin_I18N($this);
         $this->pageTitles = array(
