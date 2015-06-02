@@ -75,4 +75,6 @@ $lan = array(
     'Adjust campaign totals' => 'Nachrichten-Statistiken anpassen',
     'Requeue the campaign' => 'Nachricht wieder der Warteschlange hinzufügen',
     'Submit' => 'Versenden',
+    /* campaigns.tpl.php */
+    'campaign_select_error' => 'Es muss eine Nachricht ausgewählt sein.',
 );

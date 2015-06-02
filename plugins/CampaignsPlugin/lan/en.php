@@ -75,4 +75,6 @@ $lan = array(
     'Adjust campaign totals' => 'Adjust campaign totals',
     'Requeue the campaign' => 'Requeue the campaign',
     'Submit' => 'Submit',
+    /* campaigns.tpl.php */
+    'campaign_select_error' => 'A campaign must be selected',
 );

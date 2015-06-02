@@ -50,6 +50,22 @@ class CampaignsPlugin_Controller
         return $tabs;
     }
 
+    private function addButton(WebblerListing $w, $caption, $select, $prompt, array $query)
+    {
+        $w->addButton(
+            $caption,
+            sprintf(
+                "javascript:formSubmit(%s, '%s', '%s', '%s', '%s', '%s')",
+                $select ? 'true' : 'false',
+                $prompt,
+                self::FORMNAME,
+                self::RADIONAME,
+                new CommonPlugin_PageURL(null, $query),
+                $this->i18n->get('campaign_select_error')
+            )
+        );
+    }
+
     protected function actionResendFormSubmit()
     {
         $model = new CampaignsPlugin_Model_ResendForm($this->db);
@@ -239,14 +255,6 @@ class CampaignsPlugin_Controller
 
         $query['action'] = 'edit';
         $this->addButton($w, $this->i18n->get('edit_button'), true, '', $query);
-    }
-
-    private function addButton(WebblerListing $w, $caption, $select, $prompt, array $query)
-    {
-        $w->addButton($caption, sprintf(
-            "javascript:formSubmit(%s, '%s', '%s', '%s', '%s')",
-            $select ? 'true' : 'false', $prompt, self::FORMNAME, self::RADIONAME, new CommonPlugin_PageURL(null, $query)
-        ));
     }
 
     public function total()
