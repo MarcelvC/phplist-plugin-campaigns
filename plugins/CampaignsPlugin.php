@@ -25,8 +25,8 @@ class CampaignsPlugin extends phplistPlugin
     public $topMenuLinks = array(
         'main' => array('category' => 'campaigns')
     );
-	
-	public function sendFormats()
+    
+    public function sendFormats()
     {
         global $plugins;
         require_once $plugins['CommonPlugin']->coderoot . 'Autoloader.php';
@@ -36,7 +36,7 @@ class CampaignsPlugin extends phplistPlugin
         );
         return null;
     }
-	
+    
     public function adminmenu() {
         return $this->pageTitles;
     }
