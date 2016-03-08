@@ -1,6 +1,6 @@
 <?php
 /**
- * CampaignsPlugin for phplist
+ * CampaignsPlugin for phplist.
  * 
  * This file is a part of CampaignsPlugin.
  *
@@ -14,34 +14,20 @@
  * GNU General Public License for more details.
  * 
  * @category  phplist
- * @package   CampaignsPlugin
+ *
  * @author    Duncan Cameron
  * @copyright 2014-2016 Duncan Cameron
  * @license   http://www.gnu.org/licenses/gpl.html GNU General Public License, Version 3
+ *
  * @link      http://forums.phplist.com/
  */
 
 /**
- * This is the HTML template for the plugin page
- * 
+ * This is the entry code invoked by phplist.
  */
+if (!(phplistPlugin::isEnabled('CommonPlugin'))) {
+    echo 'phplist-plugin-common must be installed and enabled to use this plugin';
 
-/**
- *
- * Available fields
- * - $model: CampaignsPlugin_Model_ResendForm
- * - $toolbar: HTML for toolbar
- * - $errorMessage: resend error message
- * - $resendResults: array of results
- * - $action: form action URL
- * - $message: 
- */
-?>
-<div>
-    <hr>
-    <?php echo $toolbar; ?>
-    <div style='margin-top: 10px;'>
-        <?php echo $panel; ?>
-    </div>
-</div>
-
+    return;
+}
+CommonPlugin_Main::run(new CampaignsPlugin_ControllerFactory());

@@ -1,7 +1,7 @@
 <?php
 /**
- * CampaignsPlugin for phplist
- * 
+ * CampaignsPlugin for phplist.
+ *
  * This file is a part of CampaignsPlugin.
  *
  * This plugin is free software: you can redistribute it and/or modify
@@ -12,36 +12,31 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
- * @category  phplist
- * @package   CampaignsPlugin
+ *
  * @author    Duncan Cameron
  * @copyright 2014-2016 Duncan Cameron
  * @license   http://www.gnu.org/licenses/gpl.html GNU General Public License, Version 3
- * @link      http://forums.phplist.com/
- */
-
-/**
- * This is the HTML template for the plugin page
- * 
- */
-
-/**
  *
- * Available fields
- * - $model: CampaignsPlugin_Model_ResendForm
- * - $toolbar: HTML for toolbar
- * - $errorMessage: resend error message
- * - $resendResults: array of results
- * - $action: form action URL
- * - $message: 
+ * @link      https://discuss.phplist.org/
  */
-?>
-<div>
-    <hr>
-    <?php echo $toolbar; ?>
-    <div style='margin-top: 10px;'>
-        <?php echo $panel; ?>
-    </div>
-</div>
 
+/**
+ * This class is a concrete implementation of CommonPlugin_ControllerFactoryBase.
+ */
+class CampaignsPlugin_ControllerFactory extends CommonPlugin_ControllerFactoryBase
+{
+    /**
+     * Custom implementation to create a controller using plugin and page.
+     *
+     * @param string $pi     the plugin
+     * @param array  $params further parameters from the URL
+     *
+     * @return CommonPlugin_Controller
+     */
+    public function createController($pi, array $params)
+    {
+        $class = $pi . '_Controller_' . ucfirst($params['page']);
+
+        return new $class();
+    }
+}

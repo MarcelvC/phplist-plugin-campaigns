@@ -16,7 +16,7 @@
  * @category  phplist
  * @package   CampaignsPlugin
  * @author    Duncan Cameron
- * @copyright 2014 Duncan Cameron
+ * @copyright 2014-2016 Duncan Cameron
  * @license   http://www.gnu.org/licenses/gpl.html GNU General Public License, Version 3
  * @link      http://forums.phplist.com/
  */
@@ -38,8 +38,8 @@ $lan = array(
     'Unable to requeue campaign %d' => 'Unable to requeue campaign %d',
     'Campaign %d copied to %d' => 'Campaign %d copied to %d',
     'Unable to copy campaign %d' => 'Unable to copy campaign %d',
-    'Campaign %d deleted' => 'Campaign %d deleted',
-    'Unable to delete %d ' => 'Unable to delete %d ',
+    'Campaigns %s deleted' => 'Campaigns %s deleted',
+    'Unable to delete %s ' => 'Unable to delete %s ',
     '%d campaigns deleted' => '%d campaigns deleted',
     'Campaigns' => 'Campaigns',
     'ID' => 'ID',
@@ -48,7 +48,7 @@ $lan = array(
     'Entered' => 'Entered',
     'Embargo' => 'Embargo',
     'details' => 'details',
-    'lists' => 'lists',
+    'lists' => 'Lists',
     'status' => 'status',
     'select' => 'select',
     'Sent' => 'Sent',
@@ -57,8 +57,8 @@ $lan = array(
     'requeue_prompt' => 'Are you sure that you want to requeue the selected campaign?',
     'copy_button' => 'Copy',
     'copy_prompt' => 'Are you sure that you want to copy the selected campaign?',
-    'delete_button' => 'Delete',
-    'delete_prompt' => 'This will delete all data for the campaign. If you have enabled click tracking then link clicks will no longer work. Are you sure?',
+    'delete_button' => 'Delete selected',
+    'delete_prompt' => 'This will delete all data for the campaigns. If you have enabled click tracking then link clicks will no longer work. Are you sure?',
     'delete_drafts_button' => 'Delete drafts',
     'delete_draft_prompt' => 'Are you sure that you want to delete all draft campaigns without a subject?',
     'edit_button' => 'Edit',
@@ -76,5 +76,6 @@ $lan = array(
     'Requeue the campaign' => 'Requeue the campaign',
     'Submit' => 'Submit',
     /* campaigns.tpl.php */
-    'campaign_select_error' => 'A campaign must be selected',
+    'none_selected_error' => 'A campaign must be selected',
+    'only_one_allowed_error' => 'You can select only one campaign for this action',
 );
